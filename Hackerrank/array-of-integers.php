@@ -1,7 +1,7 @@
 <?php
 
 /*
-This is day 1
+This is day 1 in Hackerrank
  */
 
 function pM( $numbers ) 
@@ -12,19 +12,13 @@ function pM( $numbers )
     $zero_count = 0;
     for ( $i=0 ; $i < sizeof( $numbers ) ; $i++ )
     {
-        if ( $numbers[ $i ] < 0 )
-            $neg_count++;
-            
-        if ( $numbers[ $i ] > 0 )
-            $pos_count++;
-            
-        if ( $numbers[ $i ] == 0 )
-            $zero_count++;
+        $neg_count += ( $numbers[ $i ] < 0 ) ? 1 : 0; #if ( $numbers[ $i ] < 0 ) $neg_count++;
+        $pos_count += ( $numbers[ $i ] > 0 ) ? 1 : 0; #if ( $numbers[ $i ] > 0 ) $pos_count++;
+        $zero_count += ( $numbers[ $i ] == 0 ) ? 1 : 0; #if ( $numbers[ $i ] == 0 ) $zero_count++;
     }
-    
-    echo number_format( (float)( $pos_count / sizeof( $numbers ) ) , $decimals ) . "\n";
-    echo number_format( (float)( $neg_count / sizeof( $numbers ) ) , $decimals ) . "\n";
-    echo number_format( (float)( $zero_count / sizeof( $numbers ) ) , $decimals ) . "\n";
+    #Printing ratios (neg, pos, zero) using 6 decimal digits is the easiest exercise
+    echo number_format( (float)( $pos_count / sizeof( $numbers ) ) , $decimals ) . "\n" . number_format( (float)( $neg_count / sizeof( $numbers ) ) , $decimals ) . "\n" . number_format( (float)( $zero_count / sizeof( $numbers ) ) , $decimals ) . "\n";
 }
 
-#This was the dumbest solution. It hit me hard Lol. I'm out of shape.
+#This was the dumbest solution. It hit me hard Lol. 
+#I'm out of shape.
