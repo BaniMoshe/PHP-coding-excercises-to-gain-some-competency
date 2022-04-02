@@ -4,12 +4,15 @@
 This is day 1 in Hackerrank
  */
 
-function pM( $numbers ) 
+function print_ratios( $numbers ) 
 {
-    $decimals = 6; #As per your instructions
+    #Local vars initialization
+    $decimals = 6;
     $pos_count = 0;
     $neg_count = 0;
     $zero_count = 0;
+
+    #Reading the array of integer values
     for ( $i=0 ; $i < sizeof( $numbers ) ; $i++ )
     {
         $neg_count += ( $numbers[ $i ] < 0 ) ? 1 : 0; #if ( $numbers[ $i ] < 0 ) $neg_count++;
